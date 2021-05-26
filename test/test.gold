@@ -1,0 +1,167 @@
+[Simple sequence of characters: abc]
+Found: abc
+[Simple alternate characters: a|b|c]
+Found: a
+Found: b
+Found: c
+[Alternate words: this|that|theother]
+Found: this
+Found: that
+Found: theother
+Found: theother
+[Alternate words inside parens: ((this|that|theother))]
+Found: this
+Found: that
+Found: theother
+Found: theother
+[Alternate words inside parens: ((this)|((that))|(theother))]
+Found: this
+Found: that
+Found: theother
+Found: theother
+[Simple closure- abc*]
+Found: ab
+Found: abc
+Found: abcccccccccccccccccc
+[Expression closure- z(abc)*z]
+Found: zz
+Found: zabcz
+Found: zabcabcabcz
+[Combination of alternates and closures: ((a|b)|(c|d)kk*)*z]
+Found: z
+Found: az
+Found: aaaaz
+Found: ababz
+Found: ckz
+Found: dkz
+Found: dkkkkkkkkkz
+Found: ckkkkkkkkkz
+[Two character alternates: th(ei|ie)r]
+Found: their
+Found: thier
+Found: their
+[With added closure: th(ei|ie)*r]
+Found: their
+Found: theieieieir
+Found: thieeiieeir
+Found: thr
+[More alternate closures: z(aa*|b(b)*)z]
+Found: zaz
+Found: zaaaaaaaaaaaz
+Found: zbz
+Found: zbbbbbbbbbbbz
+[More alternate closures: z(aa*|b(b)*|ccc)*z]
+Found: zaz
+Found: zaaaaaaaaaaaz
+Found: zbz
+Found: zbbbbbbbbbbbz
+Found: zz
+Found: zcccz
+[Alternates with closure and shared starting chars: (a*b|ac)d]
+Found: abd
+Found: acd
+Found: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabd
+[Anchors: ^alpha]
+Found: alpha
+Found: alpha
+[Anchors: alpha$]
+Found: alpha
+Found: alpha
+[Anchors: ^alpha$]
+Found: alpha
+[Anchors: ^(alpha|beta)$]
+Found: alpha
+Found: beta
+[Anchors: (^alpha|beta$)]
+Found: alpha
+Found: beta
+Found: alpha
+Found: beta
+[Anchors: ^alpha|^beta$|gamma$]
+Found: alpha
+Found: alpha
+Found: beta
+Found: gamma
+Found: gamma
+[Single dot: z.z]
+Found: zaz
+Found: zbz
+[Three dots: z...z]
+Found: zaaaz
+Found: zbbgz
+[Dot closure: z.*z]
+Found: zaaaz
+Found: zlots of characters that aren't z
+Found: zz
+[Dot closure followed by alternate: z.*(a|b)]
+Found: zkkkkkka
+Found: zjkjkjkjueyb
+Found: zzzzzzzzzzzzzzzzza
+[Dot closure as alternate: z(a.*|b)z]
+Found: zakkkkkkz
+Found: zbz
+Found: zaaaaaaaaz
+[Dot closure as alternates: z(a.*|bbb|cd.*)z]
+Found: zakksdjksjz
+Found: zbbbz
+Found: zcdsomthing not z
+[Character class: z[abc]z]
+Found: zaz
+Found: zbz
+Found: zcz
+[Character class negation: z[^abc]z]
+Found: zdz
+Found: zez
+Found: zfz
+Found: zzz
+[Character class range: z[a-y]z]
+Found: zaz
+Found: zbz
+Found: zcz
+Found: zdz
+Found: zyz
+[Character class ranges: z[a-y0-9]z]
+Found: zaz
+Found: zbz
+Found: zcz
+Found: zdz
+Found: zyz
+Found: z1z
+Found: z9z
+Found: z0z
+Found: z5z
+[Character class negation ranges: z[^a-y0-9]z]
+Found: zzz
+Found: zAz
+Found: zZz
+Found: zGz
+Found: z]z
+[Character class meta as regular: z[\^\]]z]
+Found: z]z
+Found: z^z
+[Character class range with closure: z[a-y]*z]
+Found: zaz
+Found: zbz
+Found: zcz
+Found: zdz
+Found: zyz
+Found: zz
+Found: zabcdefghijkeyz
+Found: zz
+[Character class range with closure at end: zz[a-y]*]
+Found: zza
+Found: zzaaaaaaaaaaaaaaaa
+Found: zzabcdefghijuk
+[Character class range with alternates: z(a|[0-9]|b)z]
+Found: zaz
+Found: zbz
+Found: z0z
+Found: z9z
+Found: z7z
+[Character class range with alternates & closure: z(a|[0-9]|b)*z]
+Found: zaz
+Found: zbz
+Found: z0ab9z
+Found: z9999999999999z
+Found: z7aaaaaaaaaaaaaaaz
+Found: zz

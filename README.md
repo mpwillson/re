@@ -5,7 +5,7 @@ described in Chapter 20 of "Algorithms" by Robert Sedgewick (1984).
 
 ## SYNOPSIS
 
-`
+```C
 #include "re.h"
 
 struct sm_fsm*
@@ -13,7 +13,8 @@ re_compile(char* re_str, int flags);
 
 struct re_matched*
 re_match(struct sm_fsm* fsm, char* search_str);
-`
+```
+
 
 ## DESCRIPTION
 
@@ -26,12 +27,13 @@ and a string to search, search_str.  If a match is found, a pointer to
 an re_matched structure is returned.  NULL is returned for no match.
 
 The re_match structure is:
-`
+```C
  struct re_matched {
     int start;
     int end;
   };
-`
+```
+
 where start is the character position within search_str where the
 match starts and end is the last character position of the match.
 
@@ -40,7 +42,8 @@ match starts and end is the last character position of the match.
 An example of using the above API can be found in `ret.c`.
 
 The following regex special characters are supported:
-`
+
+```
 *    zero or more occurances of the previous character
 |    alternate
 ( )  grouping
@@ -48,6 +51,6 @@ The following regex special characters are supported:
 $    end of string anchor
 .    any character
 [ ]  character class. Ranges indicated by -. ^ as first char negates
-`
+```
 
 Special characters are escaped by a backslash '\'.

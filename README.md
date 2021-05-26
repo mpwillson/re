@@ -1,4 +1,4 @@
 # re
 
-Regular expression matcher, writtne in C.  Based on the algorithm
-described in "Algorithms" by Robert Sedgewick (1984).
+Regular expression matcher, written in C.  Based on the algorithm
+described in Chapter 20 of "Algorithms" by Robert Sedgewick (1984).

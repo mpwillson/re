@@ -53,4 +53,4 @@ $    end of string anchor
 [ ]  character class. Ranges indicated by -. ^ as first char negates
 ```
 
-Special characters are escaped by a backslash '\'.
+Special characters are escaped by a backslash '\\'.
